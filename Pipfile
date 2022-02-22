@@ -10,6 +10,9 @@ dj-database-url = "*"
 psycopg2-binary = "*"
 
 [dev-packages]
+isort = "*"
+black = "*"
+flake8 = "*"
 
 [requires]
 python_version = "3.9"
