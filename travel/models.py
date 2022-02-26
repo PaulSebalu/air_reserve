@@ -2,6 +2,13 @@ from django.db import models
 from django.conf import settings
 
 
+class Route(models.Model):
+    name = models.CharField(max_length=256, blank=True)
+
+    def __repr__(self):
+        return self.name
+
+
 class FlightStatus:
     SCHEDULED = "scheduled"
     CANCELLED = "cancelled"
@@ -34,8 +41,8 @@ class Flight(models.Model):
         max_length=30, choices=FlightStatus.CHOICES, default=FlightStatus.SCHEDULED
     )
     route = models.ManyToManyField(
-        Routes,
-        db_table=flight_routes,
+        Route,
+        db_table="flight_routes",
         related_name="routes",
         related_query_name="route",
     )
@@ -69,7 +76,3 @@ class Booking(models.Model):
 
     def __repr__(self):
         pass
-
-
-class Routes(models.Model):
-    name = models.CharField(max_length=256, blank=True)
