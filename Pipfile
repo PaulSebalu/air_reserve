@@ -8,11 +8,14 @@ django = "==3.2"
 python-decouple = "*"
 dj-database-url = "*"
 psycopg2-binary = "*"
+django-prices = "*"
 
 [dev-packages]
 isort = "*"
 black = "*"
 flake8 = "*"
+autopep8 = "*"
+pycodestyle = "*"
 
 [requires]
 python_version = "3.9"
